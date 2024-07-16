@@ -63,4 +63,23 @@ const sub =(n1,n2)=> n1-n2 //(implicit return) no need to used return keyword
 console.log(sub(10,5))
 
 const objReturn =(n1) => ({name:"siya"}) //**  to return obj - writin e the obj paranthesis 
-console.log(objReturn())
+console.log(objReturn());
+
+
+/*-----------Immediately invoked function Exxpressions (IIFE)--------------------------*/
+/*An IIFE (Immediately Invoked Function Expression) is a JavaScript function that runs as soon as it is defined.
+ It is a common pattern used to avoid polluting the global scope and to create a local scope for variables. */
+
+
+(function connect(){      // Name IIFE
+    console.log(`DB connect`);
+})();
+
+(() => {  //unamed IIFE
+    console.log(`DB connect`);
+})();
+
+((name) => {
+    console.log(`name is ${name}`);
+})('diya');
+
