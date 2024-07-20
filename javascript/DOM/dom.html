@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        body {
+            background-color: rgb(252, 217, 23);
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="weekday">
+
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+
+    </div>
+
+</body>
+<script>
+    const week = document.querySelector('.weekday')
+    console.log(week)
+    console.log(week.children)
+    console.log(week.children[1].innerHTML)
+    for (let i = 0; i < week.children.length; i++) {
+     week.children[i].style.backgroundColor="pink"
+     week.children[i].style.borderRadius="50%"
+     week.children[i].style.width="150px"
+     week.children[i].style.height="50px"
+     week.children[i].style.paddingLeft="75px"
+     week.children[i].style.paddingTop="35px"
+    }
+
+    const day1 = document.querySelector('.day')
+    console.log(day1.textContent)
+    console.log(day1.parentElement)
+    console.log(day1.nextElementSibling.textContent)
+
+    console.log("Nodes:" , week.childNodes)
+
+     const divele = document.createElement('div')
+     divele.className="main"
+     divele.id= Math.round(Math.random()*10)
+
+    divele.setAttribute("headtitle" ,"created title")
+
+    divele.style.backgroundColor="green"
+    divele.innerHTML="hellloooooo! "
+    const addtext =document.createTextNode("this are Days")
+    divele.appendChild(addtext)
+    console.log(divele)
+    
+
+    document.body.appendChild(divele)
+
+</script>
+
+</html>
