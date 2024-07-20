@@ -110,3 +110,40 @@ code.forEach((item)=>{
     console.log("langName:-",item.langName,"=> langfile:-",item.langfile)
     
 })
+
+
+// filter
+ const n = [1,2,3,4,5,6,7,8,9,10]
+ const nn = n.filter((n)=>( n>5))
+ console.log(nn)
+ const even = n.filter((n)=>{ // { } use , use return
+    
+    return n %2 ==0
+ })
+ console.log(even)
+
+ // map
+ const nadd10 =n.map((num)=>{return num+10}) // {} use , use return 
+ console.log(nadd10)
+
+ // chaining
+ const chain= n.map((num)=> num*10)
+                .map((num)=>num+1)
+                .filter((num)=> num%3==0)
+console.log(chain)
+
+// reduce
+const a1 = [1,2,3,4,5]
+const initialvalue =0;
+const suma1= a1.reduce(
+    
+    (accumulator , currentValue)=> { 
+     console.log(`acc - ${accumulator} , currval - ${currentValue}`)   
+     return accumulator + currentValue }
+   ,initialvalue
+)
+
+console.log("sum1",suma1)
+
+const sum2 = a1.reduce((acc,currval)=> acc+currval , 0)
+console.log("Sum2-",sum2)
