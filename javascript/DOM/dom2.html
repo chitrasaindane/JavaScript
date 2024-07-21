@@ -28,7 +28,17 @@
     optimizeadd("CPP")
 
     const lang2 = document.querySelector("li:nth-child(2)")
-    console.log(lang2)
+    console.log(lang2.textContent)
+
+    const newli = document.createElement('li')
+    newli.textContent= "python for DS"
+    lang2.replaceWith(newli)
+
+    console.log(newli.textContent)
+
+    // remove
+    const lastlang = document.querySelector('li:last-child')
+    lastlang.remove()
 
 </script>
 </html>
