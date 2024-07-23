@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html, body{
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .box{
+            height: 50vh;
+            width: 50vw;
+            background-color:  pink;
+            text-align: center;
+            font-size: 40px;
+        }
+        button{
+            font-size: 40px;
+        }
+    </style>
+</head>
+
+<body>
+     <div class="box"> 
+    <h1>Background Changer</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+     </div>
+</body>
+<script>
+    const randomColor = function () {
+        const hex = '0123456789AABCDEF'
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+            color += hex[Math.floor(Math.random() * 16)]
+
+        }
+        return color;
+    };
+   
+    let intervalset
+    const startChange = function () {
+        if(!intervalset){
+        intervalset = setInterval(changeBColor, 1000)
+        }
+        function changeBColor() {
+            document.body.style.background = randomColor()
+        }
+    }
+
+    const stopChange = function () { 
+        clearInterval(intervalset)
+        intervalset=null
+    }
+
+    console.log(randomColor())
+    document.querySelector('#start').addEventListener('click', startChange)
+    document.querySelector('#stop').addEventListener('click', stopChange)
+
+</script>
+
+</html>
